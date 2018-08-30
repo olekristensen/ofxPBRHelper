@@ -486,20 +486,16 @@ void ofxPBRHelper::drawGui()
 					showTextureWindow = true;
 					currentId = 0;
 				}
-				if (ImGui::BeginPopupContextItem("delete"))
-				{
-					if (ImGui::Button("Delete")) {
-						ImGui::CloseCurrentPopup();
-						material->enableBaseColorMap = false;
-						material->baseColorMap = nullptr;
-						params->baseColorTex = "";
-					}
-					ImGui::EndPopup();
-				}
 				ImGui::SameLine();
 				ImGui::BeginGroup();
 				ImGui::ColorEdit4("", &material->baseColor[0]);
 				ImGui::Checkbox("enable texture", &material->enableBaseColorMap);
+                ImGui::SameLine();
+                if (ImGui::Button("Delete")) {
+                    material->enableBaseColorMap = false;
+                    material->baseColorMap = nullptr;
+                    params->baseColorTex = "";
+                }
 				ImGui::EndGroup();
 				ImGui::PopID();
 				ImGui::Spacing();
@@ -519,20 +515,16 @@ void ofxPBRHelper::drawGui()
 					showTextureWindow = true;
 					currentId = 1;
 				}
-				if (ImGui::BeginPopupContextItem("delete"))
-				{
-					if (ImGui::Button("Delete")) {
-						ImGui::CloseCurrentPopup();
-						material->enableRoughnessMap = false;
-						material->roughnessMap = nullptr;
-						params->roughnessTex = "";
-					}
-					ImGui::EndPopup();
-				}
 				ImGui::SameLine();
 				ImGui::BeginGroup();
 				ImGui::SliderFloat("", &material->roughness, 0.0, 1.0);
 				ImGui::Checkbox("enable texture", &material->enableRoughnessMap);
+                ImGui::SameLine();
+                if (ImGui::Button("Delete")) {
+                    material->enableRoughnessMap = false;
+                    material->roughnessMap = nullptr;
+                    params->roughnessTex = "";
+                }
 				ImGui::EndGroup();
 				ImGui::PopID();
 				ImGui::Spacing();
@@ -552,20 +544,16 @@ void ofxPBRHelper::drawGui()
 					showTextureWindow = true;
 					currentId = 2;
 				}
-				if (ImGui::BeginPopupContextItem("delete"))
-				{
-					if (ImGui::Button("Delete")) {
-						ImGui::CloseCurrentPopup();
-						material->enableMetallicMap = false;
-						material->metallicMap = nullptr;
-						params->metallicTex = "";
-					}
-					ImGui::EndPopup();
-				}
-				ImGui::SameLine();
+                ImGui::SameLine();
 				ImGui::BeginGroup();
 				ImGui::SliderFloat("", &material->metallic, 0.0, 1.0);
 				ImGui::Checkbox("enable texture", &material->enableMetallicMap);
+                ImGui::SameLine();
+                if (ImGui::Button("Delete")) {
+                    material->enableMetallicMap = false;
+                    material->metallicMap = nullptr;
+                    params->metallicTex = "";
+                }
 				ImGui::EndGroup();
 				ImGui::PopID();
 				ImGui::Spacing();
@@ -585,19 +573,15 @@ void ofxPBRHelper::drawGui()
 					showTextureWindow = true;
 					currentId = 3;
 				}
-				if (ImGui::BeginPopupContextItem("delete"))
-				{
-					if (ImGui::Button("Delete")) {
-						ImGui::CloseCurrentPopup();
-						material->enableNormalMap = false;
-						material->normalMap = nullptr;
-						params->normalTex = "";
-					}
-					ImGui::EndPopup();
-				}
 				ImGui::SameLine();
 				ImGui::BeginGroup();
 				ImGui::Checkbox("enable texture", &material->enableNormalMap);
+                ImGui::SameLine();
+                if (ImGui::Button("Delete")) {
+                    material->enableNormalMap = false;
+                    material->normalMap = nullptr;
+                    params->normalTex = "";
+                }
 				ImGui::SliderFloat("", &material->normalVal, 0.0, 1.0);
 				ImGui::PopID();
 				ImGui::EndGroup();
@@ -617,19 +601,15 @@ void ofxPBRHelper::drawGui()
 					showTextureWindow = true;
 					currentId = 4;
 				}
-				if (ImGui::BeginPopupContextItem("delete"))
-				{
-					if (ImGui::Button("Delete")) {
-						ImGui::CloseCurrentPopup();
-						material->enableOcclusionMap = false;
-						material->occlusionMap = nullptr;
-						params->occlusionTex = "";
-					}
-					ImGui::EndPopup();
-				}
-				ImGui::SameLine();
+                ImGui::SameLine();
 				ImGui::BeginGroup();
 				ImGui::Checkbox("enable texture", &material->enableOcclusionMap);
+                ImGui::SameLine();
+                if (ImGui::Button("Delete")) {
+                    material->enableOcclusionMap = false;
+                    material->occlusionMap = nullptr;
+                    params->occlusionTex = "";
+                }
 				ImGui::EndGroup();
 				ImGui::PopID();
 
@@ -648,19 +628,15 @@ void ofxPBRHelper::drawGui()
 					showTextureWindow = true;
 					currentId = 5;
 				}
-				if (ImGui::BeginPopupContextItem("delete"))
-				{
-					if (ImGui::Button("Delete")) {
-						ImGui::CloseCurrentPopup();
-						material->enableEmissionMap = false;
-						material->emissionMap = nullptr;
-						params->emissionTex = "";
-					}
-					ImGui::EndPopup();
-				}
 				ImGui::SameLine();
 				ImGui::BeginGroup();
 				ImGui::Checkbox("enable texture", &material->enableEmissionMap);
+                ImGui::SameLine();
+                if (ImGui::Button("Delete")) {
+                    material->enableEmissionMap = false;
+                    material->emissionMap = nullptr;
+                    params->emissionTex = "";
+                }
 				ImGui::EndGroup();
 				ImGui::PopID();
 
@@ -679,19 +655,15 @@ void ofxPBRHelper::drawGui()
 					showTextureWindow = true;
 					currentId = 6;
 				}
-				if (ImGui::BeginPopupContextItem("delete"))
-				{
-					if (ImGui::Button("Delete")) {
-						ImGui::CloseCurrentPopup();
-						material->enableDetailBaseColorMap = false;
-						material->detailBaseColorMap = nullptr;
-						params->detailBaseColorTex = "";
-					}
-					ImGui::EndPopup();
-				}
 				ImGui::SameLine();
 				ImGui::BeginGroup();
 				ImGui::Checkbox("enable texture", &material->enableDetailBaseColorMap);
+                ImGui::SameLine();
+                if (ImGui::Button("Delete")) {
+                    material->enableDetailBaseColorMap = false;
+                    material->detailBaseColorMap = nullptr;
+                    params->detailBaseColorTex = "";
+                }
 				ImGui::EndGroup();
 				ImGui::PopID();
 
@@ -710,19 +682,15 @@ void ofxPBRHelper::drawGui()
 					showTextureWindow = true;
 					currentId = 7;
 				}
-				if (ImGui::BeginPopupContextItem("delete"))
-				{
-					if (ImGui::Button("Delete")) {
-						ImGui::CloseCurrentPopup();
-						material->enableDetailNormalMap = false;
-						material->detailNormalMap = nullptr;
-						params->detailNormalTex = "";
-					}
-					ImGui::EndPopup();
-				}
 				ImGui::SameLine();
 				ImGui::BeginGroup();
 				ImGui::Checkbox("enable texture", &material->enableDetailNormalMap);
+                ImGui::SameLine();
+                if (ImGui::Button("Delete")) {
+                    material->enableDetailNormalMap = false;
+                    material->detailNormalMap = nullptr;
+                    params->detailNormalTex = "";
+                }
 				ImGui::EndGroup();
 				ImGui::PopID();
 
@@ -764,7 +732,7 @@ void ofxPBRHelper::drawGui()
 				ofxPBRMaterial* material = materials[currentMaterialKey].first;
 				MaterialParams* params = &materials[currentMaterialKey].second;
 
-                ImGui::SetNextWindowSize(ImVec2(300, 150), ImGuiSetCond_FirstUseEver);
+                ImGui::SetNextWindowSize(ImVec2(300, 150), ImGuiSetCond_Once);
 				ImGui::Begin("Textures", &showTextureWindow);
 				if (ImGui::Button("load texture")) {
 					ofFileDialogResult openFileResult = ofSystemLoadDialog("Select a image");
@@ -852,6 +820,7 @@ void ofxPBRHelper::drawGui()
 						}
 						showTextureWindow = false;
 					}
+                    /*
 					ImGui::PushID(index);
 					if (ImGui::BeginPopupContextItem("detail"))
 					{
@@ -870,7 +839,7 @@ void ofxPBRHelper::drawGui()
 						ImGui::EndPopup();
 					}
 					ImGui::PopID();
-
+                     */
 					string s = t.first;
 					ImGui::Text(s.c_str());
 					

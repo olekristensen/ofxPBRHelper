@@ -53,8 +53,8 @@ void ofApp::draw(){
     
     ofDisableAlphaBlending();
     ofEnableDepthTest();
-    
-    glCullFace(GL_FRONT);
+    /*
+    glDisable(GL_CULL_FACE);
     firstPass.begin();
     firstPass.activateAllDrawBuffers();
     ofClear(0);
@@ -64,7 +64,7 @@ void ofApp::draw(){
     cam.end();
     firstPass.end();
     glDisable(GL_CULL_FACE);
-    
+    */
     ofDisableDepthTest();
     ofEnableAlphaBlending();
     

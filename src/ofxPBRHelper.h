@@ -23,7 +23,7 @@ private:
 	void setCubeMapsFromJson(string cubeMapName);
 	void setPBRFromJson();
 
-	ofxImGui gui;
+    ofxImGui::Gui gui;
     bool enableOtherGui;
 	ofxJSONElement settings;
 	ofxPBR* pbr;

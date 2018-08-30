@@ -18,9 +18,11 @@ void ofxPBRFiles::setup(string folderPath)
 	for (auto file : dir.getFiles()) {
 		ofDisableArbTex();
 		ofTexture* texture = new ofTexture();
-		ofxPBRImage img;
+        ofxPBRImage img;
 		img.load(file.getAbsolutePath());
 		*texture = img.getTexture();
+        texture->enableMipmap();
+        texture->generateMipmap();
 		textures.insert(map<string, ofTexture*>::value_type(file.getFileName(), texture));
 		ofEnableArbTex();
 	}
